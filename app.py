@@ -1,8 +1,12 @@
-from flask import Flask
+from flask import Flask,render_template,request
 app = Flask(__name__)
-@app.route("/")
+@app.route("/", methods = ["GET", "POST"])
 def home(): 
-    return"Hello, World! This is my first Python website"
+    text = ""
+    if request.method == "POST":
+        text = request.form["mytextbox"] #get value from textbox
+    return render_template("index.html",text = text)
 if __name__ == "__main__":
     app.run(debug=True)
+
 
