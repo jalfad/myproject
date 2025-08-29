@@ -1,11 +1,17 @@
 from flask import Flask,render_template,request
 app = Flask(__name__)
-@app.route("/", methods = ["GET", "POST"])
+@app.route("/")
 def home(): 
-    text = ""
-    if request.method == "POST":
-        text = request.form["mytextbox"] #get value from textbox
-    return render_template("index.html",text = text)
+    return render_template("index.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
 

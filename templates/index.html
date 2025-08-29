@@ -1,18 +1,50 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> My First Python Website </title>
+    <title> SpiderWater </title>
+    
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            background-image: url("/static/EVERY\ DROP\ MATTERS.png"); /* Load from static folder */
+            background-size: cover; /* Fill the screen */
+            background-position: center;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            }      
+        .navbar {
+            background: lab(43.52% -19.6 -17.43 / 0.7);
+            padding: 15px;
+            display: flex;
+            justify-content: left;
+        }
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 18px;
+        }
+        .navbar a:hover {
+            color: aqua;
+        }
+        .content {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+    </style>
 </head>
 <body>
-    <h2>Enter something here:</h2>
-    <form method="POST">
-        <input type="text" name="mytextbox" placeholder="type here...."/>
-        <button type="submit">submit</button>
-    </form>
+<div class="navbar">
+    <a href="/">Home</a>
+    <a href="/about">About</a>
+    <a href="/contact">Contact Us</a>
+</div>
 
-    {% if text %}
-        <p>You type: <b>{{ text }}</b></p>
-    {% endif %}
-    
+
 </body>
+
+
 </html>
